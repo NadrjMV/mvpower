@@ -63,12 +63,17 @@ document.getElementById('csvFile').addEventListener('change', function (event) {
     const searchInput = document.getElementById('searchInput');
     const originalData = data.slice(1);
   
-    searchInput.addEventListener('input', function () {
-      const query = this.value.toLowerCase();
-      const filtered = originalData.filter(row =>
-        row.some(cell => cell.toLowerCase().includes(query))
-      );
-      displayTable([data[0], ...filtered]);
-    });
-  }
-  
+let searchTimeout;
+searchInput.addEventListener('input', function () {
+  clearTimeout(searchTimeout);
+
+  searchTimeout = setTimeout(() => {
+    const query = this.value.toLowerCase();
+
+    const filtered = originalData.filter(row =>
+      row.some(cell => cell.toLowerCase().includes(query))
+    );
+
+    displayTable([data[0], ...filtered]);
+  }, 300); // Aguarda 300ms entre digitações
+});
