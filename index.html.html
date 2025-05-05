@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Editais Licitatórios</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📂 Painel de Editais Licitatórios</h1>
+    <p>Visualização dos editais - Jordan / MVPower</p>
+  </header>
+
+  <section class="upload-section">
+    <label class="file-upload">
+      📁 Escolher Arquivo CSV
+      <input type="file" id="csvFile" accept=".csv" />
+    </label>
+    <input type="text" id="searchInput" placeholder="🔍 Buscar por serviço, estado ou código..." />
+  </section>
+
+  <section class="table-container">
+    <table id="csvTable">
+      <thead>
+        <tr>
+          <th>📅 Data</th>
+          <th>🛠️ Serviço</th>
+          <th>🔢 Código</th>
+          <th>🏢 UASG/ID</th>
+          <th>📝 Observação</th>
+          <th>💰 Valor</th>
+          <th>🧩 Plataforma</th>
+          <th>📍 Estado</th>
+          <th>🔗 Link</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>Desenvolvido para Visualização de licitações • <strong>@Jordan - MVPower</strong></p>
+  </footer>
+</body>
+</html>
